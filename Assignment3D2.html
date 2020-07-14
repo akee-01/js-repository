@@ -1,0 +1,38 @@
+
+<html >
+
+<head>
+ 
+  <title>JS program to get current date and time</title>
+</head>
+
+<body>
+  <h2>LU JS Assignment3 Day2</h2>
+  
+  <p><strong>Date Info:</strong></p>
+ 
+  <script>
+
+    var today = new Date();
+    var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+    document.write("Current Date in the given formats:");
+
+    document.write("<br><br>mm-dd-yyyy: " + mm + '-' + dd + '-' + yyyy);
+    document.write("<br><br>mm/dd/yyyy: " + mm + '/' + dd + '/' + yyyy);
+    document.write("<br><br>dd-mm-yyyy: " + dd + '-' + mm + '-' + yyyy);
+    document.write("<br><br>dd/mm/yyyy: " + dd + '/' + mm + '/' + yyyy);
+
+  </script>
+</body>
+
+</html>
