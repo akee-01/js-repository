@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentataion on Var,Let and Constant</title>
+</head>
+<body>
+    <h1>Difference between var, let and const. </h1>
+    <h2>var = declaration are globally scoped function</h2>
+    <h2> variable with const is similar to let when it comes to Block Scope</h2>
+   
+    <script>
+
+        {
+            var name = "AAkash";
+            console.log(name); //this will print name in the console
+        }
+        console.log(name); //this will print name in the console
+         
+        {
+            let value = 24 ;
+            console.log(value); //this will print value in the console
+        }
+        //console.log(value); //this will give error.
+
+        {
+            const branch = "ECE";
+            console.log(branch); //this will print name in the console
+        }
+        //console.log(branch); //this will give error.
+
+        /*2. "var" variables can be updated and redeclared.
+             "let" variables can be updated but not redeclared.
+             "const" varaibles can neither be updated nor redeclared. */
+        var name = "Mango";
+        console.log(name);
+        name = "Ratnagiri Alphanso" // updated
+        console.log(name);
+        var name = "Devgad Mango" // redeclared
+        console.log(name);
+
+        let value = 120;
+        console.log(value);
+        value =300 //updated
+        console.log(value);
+        //let value = 25; This will give error.
+        //console.log(value);
+
+        const branch = "BCB";
+       // branch = "ME"; This will give error
+       // const branch ="CSE";  This too will result in error
+
+        /*3. While "var" and let can be declared without being initialized during declaration.
+        "const" must be initialed during declaration.*/
+
+        var name;
+        name1 = "Mango";
+
+        let pcs;
+        pcs = 40;
+
+
+
+    </script>
+</body>
+</html>
