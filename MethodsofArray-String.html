@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strings-Arrays</title>
+
+</head>
+
+<body>
+  <h1>Assignment Questions for Day 2</h1>
+
+  
+
+  <h2>Methods of String and Array.</h2>
+  <p style="color:rgb(255, 123, 0);font-size:18px;"> String Methods are as follows <br><br>
+
+
+1.Substring<br><br>
+2.Substr <br><br>
+3.Slice.
+<br><br>
+1. str.slice(start [, end])<br>
+This method is use to slice any strings according to their index.
+
+let str = "Aakash";<br>
+console.log( str.slice(0, 3) ); // 'kash', the substring from 0 to 5 (not including 3)<br><br>
+
+If we dont provide 2nd args, then slicing will from 1st index to last index of the string:<br>
+console.log( str.slice(2) ); 
+
+<br><br>
+2. str.substring(start, [end])<br>
+Returns the part of the string between start and end.
+<br>
+This is almost the same as slice, but it allows start to be greater than end.
+<br>
+
+<br><br>
+3. str.substr(start [, length])<br>
+Returns the part of the string from start, with the given length.
+<br>
+In contrast with the previous methods, this one allows us to specify the length instead of the ending position:
+<br>
+console.log( str.substr(2, 4) ); // 'ka', from the 2nd position get 4 characters <br>
+// The first argument may be negative, to count from the end:<br>
+
+<br>
+Replacing String Content <br>
+This method is use to replace a specified value with another value in a string:<br><br>
+
+
+var str2 = 'Aakash is working hard';<br>
+console.log(str2.replace("is", "was,"));
+</p>
+<br><br>
+
+<p style="color:yellowgreen;font-size:18px;">
+
+2. Array Methods:
+<br>
+How to delete an element from the array?
+<br>
+The arrays are objects, so we can delete string from an array:
+<br><br>
+
+  let arr = ["Aakash", "Learning", "JavaScript"];<br><br>
+
+
+  delete arr[1];remove "Learning"<br><br>
+
+
+  alert( arr[1] ); undefined
+<br><br>
+
+now arr = ["Aakash",  , "JavaScript"];<br><br>
+
+  alert( arr.length ); // 3 <br>
+  <br>
+
+  The element was removed, but the array still has 3 elements, we can see that arr.length == 3.</mark>
+<br><br>
+
+But for arrays we usually want the rest of elements to shift and occupy the freed place. We expect to have a shorter array now.
+<br><br>
+So, special methods should be used.
+<br><br>
+The arr.splice(start) method is a swiss army knife for arrays. It can do everything: insert, remove and replace elements.
+<br><br>
+It starts from the position index: removes deleteCount elements and then inserts elem1, ..., elemN at their place.
+Returns the array of removed elements.
+<br><br>
+This method is easy to grasp by examples.
+Let’s start with the deletion:
+<br><br>
+let arr = ["we", "love", "India"];
+arr.splice(1, 1); // from index 1 remove 1 element
+<br><br>
+alert( arr ); // ["we", "India"]
+<br><br>
+let arr3 = ["lets", "go", "tracking", "some", "day"];
+<br>
+// remove 2 first elements <br>
+let removed = arr.splice(0, 2);
+<br>
+alert( removed ); // "I", "study"  array of removed elements
+</mark>
+<br>
+The call to arr.sort() sorts the array in place, changing its element order.
+<br><br>
+
+It also returns the sorted array, but the returned value is usually ignored, as arr itself is modified.
+<br.<br> 
+let arr4 = [ 92, 29, 119,220 ];
+
+  // the method reorders the content of arr <br><br>
+  arr.sort();
+
+  alert( arr );  [119, 220, 29, 92]
+<br>
+Did you notice anything strange in the outcome?
+The order became[119, 220, 29, 92]. Incorrect. But why?
+The items are sorted as strings by default.
+Literally, all elements are converted to strings for comparisons. For strings, lexicographic ordering is applied and indeed "2" > "15".
+To use our own sorting order, we need to supply a function as the argument of arr.sort().
+The function should compare two arbitrary values and return:
+<br><br>
+
+function compareNumeric(a, b) { <br><br>
+  if (a > b) return 1;<br><br>
+  if (a == b) return 0;<br><br>
+  if (a < b) return -1; <br><br>
+}<br>
+<br><br>
+let arr5 = [119, 220, 29, 92]<br>
+console.log(arr5);<br>
+arr5.sort(compareNumeric);this will commpard the value in acsending order give the output according to that
+<br><br>
+console.log(arr5);  // [29, 92, 119, 220]
+
+
+
+</p>
+
+  <script src="Strings-Array.js" charset="utf-8"></script>
+
+</body>
+
+</html>
